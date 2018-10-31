@@ -166,7 +166,7 @@ $("#start-button").on("click", function (event) {
         thisPlayer = 1;
         $("#player-1-title").text(username).addClass("font-weight-bold");
         var usernameText = $("<span class='font-weight-bold'>").text(username);
-        $("#player").text("Hi " );
+        $("#player").text("Hi ");
         $("#player").append(usernameText)
         $("#player").append(". You are player " + thisPlayer + ".");
         firebase.database().ref('player-data').child("first").set({
@@ -183,7 +183,7 @@ $("#start-button").on("click", function (event) {
         thisPlayer = 2;
         $("#player-2-title").text(username).addClass("font-weight-bold");
         var usernameText = $("<span class='font-weight-bold'>").text(username);
-        $("#player").text("Hi " );
+        $("#player").text("Hi ");
         $("#player").append(usernameText)
         $("#player").append(". You are player " + thisPlayer + ".");
         firebase.database().ref('player-data').child("second").set({
@@ -200,7 +200,7 @@ $("#start-button").on("click", function (event) {
         thisPlayer = 1;
         $("#player-1-title").text(username).addClass("font-weight-bold");
         var usernameText = $("<span class='font-weight-bold'>").text(username);
-        $("#player").text("Hi " );
+        $("#player").text("Hi ");
         $("#player").append(usernameText)
         $("#player").append(". You are player " + thisPlayer + ".");
         firebase.database().ref('player-data').child("first").set({
@@ -303,7 +303,29 @@ $(document).on("click", "#pa2", function () {
     });
 });
 
+//When button to add a new player is clicked
+$("#send-text").on("click", function (event) {
+    if (username !== "") {
+        var message = username + ": " + $("#input-text").val().trim();
+        firebase.database().ref().child("messages").push({
+            message: message
+        });
+    }
+    else {
+        var paragraph = $("<p>").text("You must enter your player name before messaging.");
+        $(".modal-body").append(paragraph);
+        $(".modal").modal("show");
+    }
+    $("#input-text").val("");
+});
 
-//add messaging
+firebase.database().ref().child("messages").limitToLast(5).on("value", function (snapshot) {
+    $("#messages-area").empty();
+    for (var key in snapshot.val()) {
+        var paragraph = $("<p>").text(snapshot.val()[key].message);
+        $("#messages-area").append(paragraph);
+    }
+});
+
 //add functions
 //add comments
