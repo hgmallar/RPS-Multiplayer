@@ -8,12 +8,13 @@
     <title>RPS Multiplayer</title>
 
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <!-- Bootstrap & JQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
@@ -22,12 +23,12 @@
 
 <body>
     <div class="jumbotron">
-        <div class="container">
+        <div class="container-fluid">
             <h1 class="display-4 text-center">Rock Paper Scissors</h1>
         </div>
     </div>
 
-    <div class="containter col-md-8 mx-auto">
+    <div class="containter col-md-11 mx-auto">
         <div class="form-inline justify-content-center player mb-2">
             <input type="text" class="form-control" id="player-name" placeholder="Name . . . ">
             <button type="submit" class="btn btn-default ml-2" id="start-button">Start</button>
@@ -35,31 +36,47 @@
         <p id="player" class="text-center"></p>
         <div class="row">
             <div class="card col-md-4">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <p id="player-1-title">Waiting for Player 1</p>
-                    <div class="button-group" style="display: none;">
-                        <button type="button" class="btn btn-success" id="rock1">Rock</button>
-                        <button type="button" class="btn btn-success" id="paper1">Paper</button>
-                        <button type="button" class="btn btn-success" id="scissors1">Scissors</button>
+                    <div class="row justify-content-center">
+                        <div class="button-group1" style="display: none;">
+                            <img src="assets/images/rock.png" alt="Rock" id="rock1" class="rounded float-left px-2">
+                            <img src="assets/images/paper.png" alt="Paper" id="paper1" class="rounded float-left px-2">
+                            <img src="assets/images/scissors.png" alt="Scissors" id="scissors1" class="rounded float-left px-2">
+                        </div>
+                        <div class="play-again1" style="display: none;">
+                            <button type="button" class="btn btn-info" id="pa1">Play Again</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="card col-md-4">
-                <div class="card-body">
-                    This is some text within a card body.
-                </div>
+                <div class="card-body text-center" id="center-text"></div>
             </div>
             <div class="card col-md-4">
-                <div class="card-body">
+                <div class="card-body text-center">
                     <p id="player-2-title">Waiting for Player 2</p>
-                    <div class="button-group"  style="display: none;">
-                        <button type="button" class="btn btn-success" id="rock2">Rock</button>
-                        <button type="button" class="btn btn-success" id="paper2">Paper</button>
-                        <button type="button" class="btn btn-success" id="scissors2">Scissors</button>
+                    <div class="row justify-content-center">
+                        <div class="button-group2" style="display: none;">
+                            <img src="assets/images/rock.png" alt="Rock" id="rock2" class="rounded float-left px-2">
+                            <img src="assets/images/paper.png" alt="Paper" id="paper2" class="rounded float-left px-2">
+                            <img src="assets/images/scissors.png" alt="Scissors" id="scissors2" class="rounded float-left px-2">
+                        </div>
+                        <div class="play-again2" style="display: none;">
+                            <button type="button" class="btn btn-info" id="pa2">Play Again</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="card col-md-12">
+                <div class="card-body text-center">
+                    <p id="score"></p>
+                </div>
+            </div>
+        </div>
+
 
         <div id="messages-area">
 
