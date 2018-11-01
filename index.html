@@ -7,6 +7,7 @@
 
     <title>RPS Multiplayer</title>
 
+    <!-- Reset CSS File -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 
     <!-- Bootstrap & JQuery -->
@@ -14,6 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+    <!-- CSS File -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Firebase Reference -->
@@ -22,19 +24,30 @@
 </head>
 
 <body>
-    <div class="jumbotron">
-        <div class="container-fluid">
-            <h1 class="display-4 text-center">Rock Paper Scissors</h1>
+    <!-- Header -->
+    <header>
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <h1 class="display-4 text-center">Rock Paper Scissors</h1>
+            </div>
         </div>
-    </div>
+    </header>
 
     <div class="containter col-md-11 mx-auto">
+
+        <!-- Username Input -->
         <div class="form-inline justify-content-center player mb-2">
             <input type="text" class="form-control" id="player-name" placeholder="Name . . . ">
             <button type="submit" class="btn btn-default ml-2" id="start-button">Start</button>
         </div>
+
+        <!-- Username Display -->
         <p id="player" class="text-center"></p>
+
+        <!-- Game Play Area -->
         <div class="row">
+
+            <!-- Player1 -->
             <div class="card col-md-4">
                 <div class="card-body text-center">
                     <p id="player-1-title">Waiting for Player 1</p>
@@ -50,9 +63,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Information Area -->
             <div class="card col-md-4">
                 <div class="card-body text-center" id="center-text"></div>
             </div>
+
+            <!-- Player2 -->
             <div class="card col-md-4">
                 <div class="card-body text-center">
                     <p id="player-2-title">Waiting for Player 2</p>
@@ -69,6 +86,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Score Display -->
         <div class="row">
             <div class="card col-md-12">
                 <div class="card-body text-center">
@@ -78,14 +97,20 @@
         </div>
 
 
+        <!-- Messages Area -->
         <div class="row justify-content-center">
+
+            <!-- Messages Display -->
             <div id="messages-area" class="col-md-8 mt-2"></div>
+            
+            <!-- Messages Input -->
             <div class="form-group mt-2 col-md-8">
                 <input type="text" class="form-control" id="input-text" placeholder="Message Here . . . ">
             </div>
             <button type="submit" class="btn btn-default" id="send-text">Send</button>
         </div>
 
+        <!-- Modal -->
         <div class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
