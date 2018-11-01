@@ -7,4 +7,7 @@ img:hover {
     border: 2px solid red;
 }
 
+#input-text, #player-name {
+    width: 75%;
+}
 

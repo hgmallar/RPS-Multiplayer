@@ -36,9 +36,11 @@
     <div class="containter col-md-11 mx-auto">
 
         <!-- Username Input -->
-        <div class="form-inline justify-content-center player mb-2">
-            <input type="text" class="form-control" id="player-name" placeholder="Name . . . ">
-            <button type="submit" class="btn btn-default ml-2" id="start-button">Start</button>
+        <div class="row justify-content-center">
+            <div class="form-inline player col-md-8">
+                <input type="text" class="form-control mt-2" id="player-name" placeholder="Name . . . ">
+                <button type="submit" class="btn btn-default ml-2 mt-2" id="start-button">Start</button>
+            </div>
         </div>
 
         <!-- Username Display -->
@@ -102,12 +104,15 @@
 
             <!-- Messages Display -->
             <div id="messages-area" class="col-md-8 mt-2"></div>
-            
+
             <!-- Messages Input -->
-            <div class="form-group mt-2 col-md-8">
-                <input type="text" class="form-control" id="input-text" placeholder="Message Here . . . ">
+
+            <div class="form-inline col-md-8">
+                <input type="text" class="form-control mt-2" id="input-text" placeholder="Message Here . . . ">
+                <button type="submit" class="btn btn-default ml-2 mt-2" id="send-text">Send</button>
             </div>
-            <button type="submit" class="btn btn-default" id="send-text">Send</button>
+
+
         </div>
 
         <!-- Modal -->
