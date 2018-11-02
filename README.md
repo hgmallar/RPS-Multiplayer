@@ -2,7 +2,7 @@
 
 ## Multiplayer Rock Paper Scissors
 * Play rock paper scissors against another player.  
-* AMessage the other player while you're playing.  
+* Message the other player while you're playing.  
 
 ### Instructions:
 * Enter your name and wait for another player to do the same.
